@@ -10,4 +10,4 @@ public class Main {
         api.registerBot(new MyBot());
         System.out.println("MyBot running .. ");
     }
-}
+}g
