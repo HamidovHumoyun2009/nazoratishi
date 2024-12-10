@@ -64,7 +64,6 @@ public class BotCommandHandler {
         if (parts.length < 4) {
             message.setText("Tadbir qo‘shish uchun format: /add_event [Nomi] [Tavsif] [Sanasi]");
         } else {
-
             eventService.addEvent(1,"Humo","Nimadir", String.valueOf(LocalDateTime.now()));
             message.setText("Yangi tadbir qo‘shildi: ");
         }
@@ -83,8 +82,6 @@ public class BotCommandHandler {
     public SendMessage handleDeleteEventCommand(long chatId, String messageText) {
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
-
-
         String[] parts = messageText.split(" ");
         if (parts.length < 2) {
             message.setText("Tadbirni o‘chirish uchun format: /delete_event [ID]");
@@ -103,5 +100,4 @@ public class BotCommandHandler {
         message.setText(eventService.getUserEvents(chatId));
         return message;
     }
-
 }
